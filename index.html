@@ -38,41 +38,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      padding: 2.5rem 1.5rem 2rem;
+      justify-content: center;
+      padding: 2rem 1.5rem;
     }
 
-    /* Top */
-    .top {
+    .card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.25rem;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
     }
 
     .logo-palauma {
-      width: 140px;
+      width: 180px;
       opacity: 0.9;
     }
 
-    /* Center */
-    .center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      text-align: center;
-    }
-
     .logo-apero {
-      width: min(320px, 80vw);
+      width: min(300px, 78vw);
     }
 
     .event-info {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.25rem;
     }
 
     .event-date {
@@ -112,7 +105,6 @@
     /* Form */
     .form-wrap {
       width: 100%;
-      max-width: 400px;
     }
 
     .form {
@@ -207,8 +199,9 @@
     }
 
     @media (max-height: 700px) {
-      .page { justify-content: flex-start; gap: 2rem; padding-top: 1.5rem; }
-      .logo-apero { width: min(240px, 70vw); }
+      .card { gap: 0.9rem; }
+      .logo-palauma { width: 140px; }
+      .logo-apero { width: min(220px, 70vw); }
     }
   </style>
 </head>
@@ -217,16 +210,15 @@
   <div class="bg"></div>
 
   <div class="page">
+    <div class="card">
 
-    <!-- Logo Palauma Global Group -->
-    <div class="top">
+      <!-- Logo Palauma Global Group -->
       <img src="logo-palauma.png" alt="Palauma Global Group" class="logo-palauma" />
-    </div>
 
-    <!-- Centre : logo event + infos -->
-    <div class="center">
+      <!-- Logo event -->
       <img src="logo-apero.png" alt="Palaum'Apéro!" class="logo-apero" />
 
+      <!-- Infos -->
       <div class="event-info">
         <p class="event-date">Mercredi 09 Septembre 2025</p>
         <p class="event-time">19H30 — 00H00</p>
@@ -234,30 +226,29 @@
         <p class="event-lieu">13 Rue Hanno · 13008 Marseille</p>
         <p class="event-rsvp">Confirmer avant le 04 septembre</p>
       </div>
+
+      <!-- Formulaire -->
+      <div class="form-wrap">
+        <form class="form" id="rsvpForm" novalidate>
+          <input type="text" id="nom" name="nom" placeholder="Nom & Prénom" required />
+          <input type="email" id="email" name="email" placeholder="Adresse email" required />
+          <select id="personnes" name="personnes" required>
+            <option value="" disabled selected>Nombre de personnes</option>
+            <option value="1">1 personne</option>
+            <option value="2">2 personnes</option>
+            <option value="3">3 personnes</option>
+            <option value="4">4 personnes</option>
+            <option value="5">5 personnes</option>
+            <option value="6+">6 ou plus</option>
+          </select>
+          <button type="submit" class="submit-btn" id="submitBtn">Confirmer ma présence</button>
+          <div class="msg" id="msgSuccess">Merci ! À très vite le 09 septembre.</div>
+          <div class="msg" id="msgError">Une erreur est survenue. Merci de réessayer.</div>
+        </form>
+        <p class="cantoche" style="margin-top:0.75rem;">Food & drinks by Cantoche</p>
+      </div>
+
     </div>
-
-    <!-- Formulaire -->
-    <div class="form-wrap">
-      <form class="form" id="rsvpForm" novalidate>
-        <input type="text" id="nom" name="nom" placeholder="Nom & Prénom" required />
-        <input type="email" id="email" name="email" placeholder="Adresse email" required />
-        <select id="personnes" name="personnes" required>
-          <option value="" disabled selected>Nombre de personnes</option>
-          <option value="1">1 personne</option>
-          <option value="2">2 personnes</option>
-          <option value="3">3 personnes</option>
-          <option value="4">4 personnes</option>
-          <option value="5">5 personnes</option>
-          <option value="6+">6 ou plus</option>
-        </select>
-        <button type="submit" class="submit-btn" id="submitBtn">Confirmer ma présence</button>
-        <div class="msg" id="msgSuccess">Merci ! À très vite le 09 septembre.</div>
-        <div class="msg" id="msgError">Une erreur est survenue. Merci de réessayer.</div>
-      </form>
-
-      <p class="cantoche" style="margin-top:1rem;">Food & drinks by Cantoche</p>
-    </div>
-
   </div>
 
   <script>
