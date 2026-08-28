@@ -4,6 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Palaum'Apéro — 09 Septembre</title>
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://palaumapero.com/" />
+  <meta property="og:title" content="Palaum'Apéro — Mercredi 09 Septembre" />
+  <meta property="og:description" content="19H30 — 00H00 · 13 Rue Haxo, 13006 Marseille · Confirme ta présence avant le 04 septembre 🥂" />
+  <meta property="og:image" content="https://palaumapero.com/bg.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +64,11 @@
     }
 
     .logo-palauma {
-      width: 180px;
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
       opacity: 0.9;
     }
 
@@ -200,7 +215,7 @@
 
     @media (max-height: 700px) {
       .card { gap: 0.9rem; }
-      .logo-palauma { width: 140px; }
+      .logo-palauma { width: 120px; top: 1.25rem; }
       .logo-apero { width: min(220px, 70vw); }
     }
   </style>
@@ -210,10 +225,11 @@
   <div class="bg"></div>
 
   <div class="page">
-    <div class="card">
 
       <!-- Logo Palauma Global Group -->
       <img src="logo-palauma.png" alt="Palauma Global Group" class="logo-palauma" />
+
+    <div class="card">
 
       <!-- Logo event -->
       <img src="logo-apero.png" alt="Palaum'Apéro!" class="logo-apero" />
